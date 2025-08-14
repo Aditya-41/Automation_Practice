@@ -1,0 +1,29 @@
+* Appium *
+
+1> Reset Strategy
+    **<Default>**
+    a> Android 
+        Stop and clear app data after test . Do not uninstall APK
+    b> IOS 
+        Shut down sim after test. Do not destroy sim
+        If it is a Simulator and app capability is provided , uninstall the 
+        app-under-test but does not destroy simulator. If it is a real device or 
+        simulator with only "bundleId" capability, does not uninstall app-under-test.
+
+    **"fullReset"**
+    a> Android 
+        Stop app, clear app data and uninstall apk before session starts and after test
+
+    b> IOS
+        Uninstall app before and after real device test, destroy simulator before and after sim
+        This happens only before if " resetOnSessionStartOnly : true " is provided
+
+
+    **"noReset"**
+    a> Android
+        Do not stop app, do not clear app data, and do not uninstall apk
+    
+    b> IOS 
+        Do not destroy or shut down sim after test. Start test running on Whichever
+        sim running or device is plugged in
+        
