@@ -1,0 +1,41 @@
+** Locators **
+
+1> Find Element by Index
+    ele_id = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, "UiSelector().index(4)")
+    ele_id.click()
+
+2> Find Element by Class Name
+    ele_element = driver.find_element(AppiumBy.CLASS_NAME, "android.widget.EditText")
+    ele_element.send_keys("Aditya Patil")
+
+3> Find Element by Text
+    Select Element by Text Part 1 
+
+    ele_id = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'text("ENTER SOME VALUE")')
+    ele_id.click()
+
+    # Select Element by Text Part 2
+
+    ele1_id = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().textContains("ENTER SOME VALUE")')
+    ele1_id.click()
+
+4> Find Element by Content Description 
+    ele1_id = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().description("Btn1")')
+    ele1_id.click()
+
+
+
+IMP -->> XPath
+    XPath is a syntax for finding the element on a mobile screen or web page
+    There are Two types of XPath
+    1> Absolute XPath :-> It uses a complete root path to the required MobileElement path
+        ex :-> /hierarchy/android.widget.FrameLayout/android.widget.LinearLayout
+            a> '/' Finding the element inside the parent element
+            b> '//' Finding the child or nested-child element inside the parent element
+    2> Relative XPath
+        --> It uses the direct path of a child element in  parent, Using (id,className,attribute values sub-string , etc) to perform action on It
+
+        i> Ex: //tag[@attribute='value']
+            //android.widget.EditText[@text='ENTER SOME VALUE']
+
+
