@@ -1,0 +1,19 @@
+Notes for ExplicitwaitEx.py:
+
+- Sets up Appium driver for Android using UiAutomator2.
+- Connects to emulator 'pixel6a' (udid: emulator-5554) and launches 'com.code2lead.kwad'.
+- Uses Selenium's WebDriverWait for explicit waits, with a 20-second timeout and 1-second polling.
+- Ignores ElementNotVisibleException, ElementNotSelectableException, and NoSuchElementException during waits.
+
+Important code lines:
+```python
+wait = WebDriverWait(driver, 20, poll_frequency=1, ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException, NoSuchElementException])
+ele_id = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.Button[@content-desc='Btn1']"))
+ele_id.click()
+ele_element = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.EditText[@resource-id='com.code2lead.kwad:id/Et1']"))
+ele_element.send_keys("Aditya Patil")
+ele1_id = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.Button[@resource-id='com.code2lead.kwad:id/Btn1']"))
+ele1_id.click()
+```
+- Demonstrates waiting for elements to be present before interacting (click/send_keys).
+- Ends by quitting the driver.

@@ -1,0 +1,15 @@
+Notes for Ele_Action.py:
+- Sets up Appium driver for Android using UiAutomator2.
+- Connects to an emulator with deviceName 'pixel6a' and udid 'emulator-5554'.
+- Launches the app 'com.code2lead.kwad' and its main activity.
+- Finds a button by content-desc 'Btn1', prints its properties, and clicks it.
+- After clicking, finds an EditText by resource-id, sends text "Aditya Patil", and prints its properties.
+- Presses the Home key and quits the driver.
+- Some commented code for starting/stopping AppiumService.
+
+Notes for eLe_prop.py:
+- Similar setup as Ele_Action.py for Appium driver and Android emulator.
+- Finds the same button by content-desc 'Btn1', waits 5 seconds, and prints its properties.
+- Does not interact with EditText or send any text.
+- Presses the Home key and quits the driver.
+- Also contains commented code

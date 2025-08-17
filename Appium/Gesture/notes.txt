@@ -1,0 +1,45 @@
+Import Libraries
+
+    PointerInput, ActionBuilder, POINTER_TOUCH → required for W3C actions (new standard).
+
+    AppiumBy → better element finding compared to raw find_element_by_*.
+
+Find Elements
+
+    Use WebDriverWait → ensures Appium waits until the element is visible.
+
+    Get source (drag) and target (drop).
+
+Get Element Coordinates
+
+    .location → gives top-left corner (x, y).
+
+    .size → gives width, height.
+
+    Add half width/height → center of element (more stable than corners).
+
+Create Touch Input
+
+    finger = PointerInput(POINTER_TOUCH, "finger")
+    actions = ActionBuilder(driver, mouse=finger)
+
+
+    POINTER_TOUCH → tells Selenium this is a finger/touch action.
+
+    "finger" → name of the pointer device.
+
+Define Drag & Drop Sequence
+
+    move_to_location(src_x, src_y) → move finger above source element.
+
+    pointer_down() → press finger down (like holding).
+
+    pause(1) → wait a bit (natural press).
+
+    move_to_location(tgt_x, tgt_y) → drag towards target element.
+
+    release() → lift finger (drop action).
+
+Execute
+
+    actions.perform() → runs the sequence on the device.

@@ -1,0 +1,144 @@
+finger = PointerInput( "touch", "finger")
+actions = ActionChains(driver)
+actions = actions.w3c_actions 
+
+1️⃣ Tap (Single Click)
+    finger = PointerInput(POINTER_TOUCH, "finger")
+    actions = ActionBuilder(driver, mouse=finger)
+
+    actions.pointer_action.move_to_location(x, y)   # Move finger
+    actions.pointer_action.pointer_down()           # Press down
+    actions.pointer_action.pointer_up()             # Lift up (tap)
+    actions.perform()
+
+
+    ✅ Explanation: Finger goes to location → quick press down + release = tap.
+
+2️⃣ Long Press (Touch & Hold)
+    actions.pointer_action.move_to_location(x, y)
+    actions.pointer_action.pointer_down()           
+    actions.pointer_action.pause(2)   # Hold for 2 seconds
+    actions.pointer_action.pointer_up()
+    actions.perform()
+
+
+    ✅ Explanation: Finger stays pressed for some time → simulates long press.
+
+3️⃣ Double Tap
+    for _ in range(2):
+        actions.pointer_action.move_to_location(x, y)
+        actions.pointer_action.pointer_down()
+        actions.pointer_action.pointer_up()
+        actions.pointer_action.pause(0.2)  # Small gap between taps
+    actions.perform()
+
+
+    ✅ Explanation: Two quick taps at same spot.
+
+4️⃣ Swipe (Up / Down / Left / Right)
+    actions.pointer_action.move_to_location(start_x, start_y)
+    actions.pointer_action.pointer_down()
+    actions.pointer_action.move_to_location(end_x, end_y)  # Swipe direction
+    actions.pointer_action.pointer_up()
+    actions.perform()
+
+
+    ✅ Explanation: Press → drag from start point → release at end.
+
+5️⃣ Scroll (like swipe but longer distance)
+    actions.pointer_action.move_to_location(start_x, start_y)
+    actions.pointer_action.pointer_down()
+    actions.pointer_action.pause(0.5)   # Natural finger hold
+    actions.pointer_action.move_to_location(start_x, start_y - 800)  # Scroll up
+    actions.pointer_action.pointer_up()
+    actions.perform()
+
+
+    ✅ Explanation: Same as swipe, but bigger distance (like page scrolling).
+
+6️⃣ Drag & Drop
+    actions.pointer_action.move_to_location(src_x, src_y)
+    actions.pointer_action.pointer_down()
+    actions.pointer_action.pause(1)  # Hold
+    actions.pointer_action.move_to_location(tgt_x, tgt_y)
+    actions.pointer_action.pointer_up()
+    actions.perform()
+
+
+    ✅ Explanation: Finger touches source → drags to target → release.
+
+7️⃣ Pinch (Zoom Out)
+    finger1 = PointerInput(POINTER_TOUCH, "finger1")
+    finger2 = PointerInput(POINTER_TOUCH, "finger2")
+    actions = ActionBuilder(driver, mouse=finger1)
+    actions.add_pointer_input(finger2)
+
+    # Start far apart
+    actions.pointer_action.move_to_location(x1, y1)
+    actions.pointer_action.pointer_down()
+    actions.pointer_action.move_to_location(x2, y2)
+    actions.pointer_action.pointer_down()
+
+    # Move closer (pinch)
+    actions.pointer_action.move_to_location(mid_x, mid_y)
+    actions.pointer_action.move_to_location(mid_x, mid_y)
+
+    actions.pointer_action.pointer_up()
+    actions.pointer_action.pointer_up()
+    actions.perform()
+
+
+    ✅ Explanation: Two fingers start apart → move toward each other → release.
+
+8️⃣ Zoom In
+    finger1 = PointerInput(POINTER_TOUCH, "finger1")
+    finger2 = PointerInput(POINTER_TOUCH, "finger2")
+    actions = ActionBuilder(driver, mouse=finger1)
+    actions.add_pointer_input(finger2)
+
+    # Start close together
+    actions.pointer_action.move_to_location(mid_x, mid_y)
+    actions.pointer_action.pointer_down()
+    actions.pointer_action.move_to_location(mid_x, mid_y)
+    actions.pointer_action.pointer_down()
+
+    # Spread apart
+    actions.pointer_action.move_to_location(x1, y1)
+    actions.pointer_action.move_to_location(x2, y2)
+
+    actions.pointer_action.pointer_up()
+    actions.pointer_action.pointer_up()
+    actions.perform()
+
+
+    ✅ Explanation: Two fingers start close → spread apart → release (zoom in).
+
+9️⃣ Multi-touch (Two-finger Tap)
+    finger1 = PointerInput(POINTER_TOUCH, "finger1")
+    finger2 = PointerInput(POINTER_TOUCH, "finger2")
+    actions = ActionBuilder(driver, mouse=finger1)
+    actions.add_pointer_input(finger2)
+
+    # Finger 1
+    actions.pointer_action.move_to_location(x1, y1)
+    actions.pointer_action.pointer_down()
+
+    # Finger 2
+    actions.pointer_action.move_to_location(x2, y2)
+    actions.pointer_action.pointer_down()
+
+    # Release both
+    actions.pointer_action.pointer_up()
+    actions.pointer_action.pointer_up()
+    actions.perform()
+
+
+    ✅ Explanation: Two fingers tap at the same time.
+
+🔟 Flick
+    actions.pointer_action.move_to_location(start_x, start_y)
+    actions.pointer_action.pointer_down()
+    actions.pointer_action.move_to_location(end_x, end_y)
+    actions.pointer_action.pointer_up()
+    actions.perform()
+    ✅ Explanation: Like swipe, but with faster move (can simulate quick gesture).
