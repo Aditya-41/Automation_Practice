@@ -81,7 +81,7 @@ def swipe_right(element):
     actions.w3c_actions.pointer_action.pointer_up()
     actions.perform()
     
-def swipe_up(element):
+def swipe_up():
     
     # location = element.location
     size = driver.get_window_size()
@@ -98,7 +98,7 @@ def swipe_up(element):
     actions.w3c_actions.pointer_action.pointer_up()
     actions.perform()
     
-def swipe_down(element):
+def swipe_down():
     
     # location = element.location
     size = driver.get_window_size()
@@ -126,40 +126,20 @@ ele_Btn.click()
 ele_btn9 = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.Button[@text='BUTTON9']"))
 # swipe_left(ele_home)
 
-swipe_up(ele_btn9)
+swipe_up()
 time.sleep(2)
 
 ele_btn16 = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.Button[@text='BUTTON16']"))
-swipe_down(ele_btn16)
+swipe_down()
 
-# ele_sport = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='SportFragment']"))
-# swipe_left(ele_sport)
+driver.press_keycode(AndroidKey.BACK)  # Navigate back to the previous screen
+driver.press_keycode(AndroidKey.BACK)
+# driver.press_keycode(AndroidKey.TAB) 
 
-# ele_movie = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='MovieFragment']"))
-# swipe_right(ele_movie)
-
-
-# time.sleep(2)
-
-
-# swipe_right(ele_sport)
-
-
-# ele_destination = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.LinearLayout[@resource-id='com.code2lead.kwad:id/layout2']"))
-# location = ele_destination.location
-# size = ele_destination.size
-# center_x2 = location['x'] + size['width'] // 2
-# center_y2 = location['y'] + size['height'] // 2
-
-# # Create a Drag Drop action using PointerInput
-# actions = ActionChains(driver)
-# finger = PointerInput("touch", "finger")
-
-# actions.w3c_actions = ActionBuilder(driver, mouse=finger)
-# actions.w3c_actions.pointer_action.move_to_location(center_x1, center_y1)
-# actions.w3c_actions.pointer_action.pointer_down()
-
-    
+# driver.press_keycode(AndroidKey.HOME)  
+# Navigate to the recent tabs screen
+driver.press_keycode(AndroidKey.APP_SWITCH)
+swipe_up()
 
 time.sleep(5)
 driver.quit()
