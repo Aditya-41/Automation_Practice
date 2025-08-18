@@ -1,0 +1,3 @@
+Hybrid App Automation
+
+1> Mobile Application chrome version must match with Chromedriver version

@@ -132,13 +132,15 @@ time.sleep(2)
 ele_btn16 = wait.until(lambda x: x.find_element(AppiumBy.XPATH, "//android.widget.Button[@text='BUTTON16']"))
 swipe_down()
 
-driver.press_keycode(AndroidKey.BACK)  # Navigate back to the previous screen
-driver.press_keycode(AndroidKey.BACK)
+for i in range(2):
+    driver.press_keycode(AndroidKey.BACK)  # Navigate back to the previous screen
+    # driver.press_keycode(AndroidKey.BACK)
 # driver.press_keycode(AndroidKey.TAB) 
 
 # driver.press_keycode(AndroidKey.HOME)  
 # Navigate to the recent tabs screen
 driver.press_keycode(AndroidKey.APP_SWITCH)
+time.sleep(1)
 swipe_up()
 
 time.sleep(5)
