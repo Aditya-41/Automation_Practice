@@ -1,0 +1,5 @@
+18/08/2025 04:29:22 PM Monday CRITICAL: This is a critical message
+18/08/2025 04:29:22 PM Monday ERROR: This is an error message
+18/08/2025 04:29:22 PM Monday WARNING: This is a warning message
+18/08/2025 04:29:22 PM Monday INFO: This is an info message
+18/08/2025 04:29:22 PM Monday DEBUG: This is a debug message
