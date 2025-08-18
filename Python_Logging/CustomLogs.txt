@@ -1,0 +1,8 @@
+18/08/2025 08:10:32 PM Monday INFO: This is an info message from method1
+18/08/2025 08:10:32 PM Monday WARNING: This is a warning message from method1
+18/08/2025 08:10:32 PM Monday ERROR: This is an error message from method1
+18/08/2025 08:10:32 PM Monday CRITICAL: This is a critical message from method1
+18/08/2025 08:10:32 PM Monday INFO: This is an info message from method2
+18/08/2025 08:10:32 PM Monday WARNING: This is a warning message from method2
+18/08/2025 08:10:32 PM Monday ERROR: This is an error message from method2
+18/08/2025 08:10:32 PM Monday CRITICAL: This is a critical message from method2
