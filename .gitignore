@@ -21,5 +21,7 @@ secret.txt
 # Ignore VS Code settings
 .vscode/
 .pytest_cache/
+Allure_Concept/Allure_Concept/reports/
+Allure_Concept/reports/
 # Ignore Python cache files
 __pycache__/
