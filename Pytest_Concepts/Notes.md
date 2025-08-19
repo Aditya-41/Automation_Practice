@@ -13,9 +13,16 @@
 py.test -v -s files_path  
 
 2. Run test in module or in test file
+
 ```python
 py.test -v -s files_path/filename.py
-
+```
 3.Only run test_method in test_module.py
 ```python
 py.test -v -s files_path/filename.py::test_method
+```
+## Short Notes
+
+* -v :-> Verbose (It is an argument which is used to report more information about an operation in your program )
+
+* -s :-> to print statements
