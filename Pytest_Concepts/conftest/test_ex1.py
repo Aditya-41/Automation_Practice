@@ -5,8 +5,8 @@
     
  
 def test_m1(beforeMethod,beforeClass):
-    print("test_m1 is called from test 3.py")
+    print("test_m1 is called from test 1.py")
     
 def test_m2(beforeMethod,beforeClass):
-    print("test_m2 is called from test 3.py")
+    print("test_m2 is called from test 1.py")
     
