@@ -34,6 +34,11 @@ pytest -v -s test_pyex2.py::test_m1
 3. To check whether package is installed or nor type : pip list
 4. Add the pytest marker on top of the test method
 
+* Failed test,fixture or setup_class will also be re_executed.
+
+```cmd
+pytest --reruns 5 --reruns-delay 1
+```
 
 # Pytest Fixtures - Quick Notes
 
