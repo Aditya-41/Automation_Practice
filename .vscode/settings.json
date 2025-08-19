@@ -9,6 +9,9 @@
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": true,
     "python.analysis.extraPaths": ["./"],
-    "python.testing.pytestArgs": ["."]
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.pytestPath": "C:\\Users\\adity\\AppData\\Roaming\\Python\\Python39\\Scripts\\pytest.exe"
     
 }

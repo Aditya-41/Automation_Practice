@@ -11,6 +11,7 @@
 1. Run all test in specific files_path
 ```python
 py.test -v -s files_path  
+```
 
 2. Run test in module or in test file
 
