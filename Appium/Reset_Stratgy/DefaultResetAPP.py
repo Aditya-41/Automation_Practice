@@ -11,8 +11,8 @@ desired_caps['platformName'] = 'Android'
 desired_caps['deviceName'] = 'pixel6a'
 desired_caps['udid'] = 'emulator-5554'
 desired_caps['automationName'] = 'UiAutomator2'
-desired_caps['appPackage'] = 'com.android.chrome'   
-desired_caps['appActivity'] = 'com.google.android.apps.chrome.Main'
+desired_caps['appPackage'] = 'com.android.settings'   
+desired_caps['appActivity'] = 'com.android.settings.Settings'
 # desired_caps['noReset'] = True  # Set noReset to True
 
 options = UiAutomator2Options().load_capabilities(desired_caps)
