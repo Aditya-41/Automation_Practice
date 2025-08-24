@@ -3,7 +3,7 @@
 * Install the pytest-xdist
     ```cmd
     pip install pytest-xdist
-    ``
+    ```
 
 * Add udid and systemPort in Desired Capabilities
 
